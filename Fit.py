@@ -3,7 +3,7 @@ import pandas as pd
 import math
 from scipy.optimize import curve_fit
 import statistics as stat
-
+import math
 class Fit:
     # default parameters
     binwidth_E = 0.5
@@ -189,7 +189,7 @@ class Fit:
             p = Fit.linearFit(xs,bs,**kwargs)
             rsq = Fit.RSQ(y,Fit.line(x,p[0],p[1]))
             ys = y - Fit.line(x,p[0],p[1])
-        except E:
+        except:
             print("Background Removal Failed")
             return y, None, None
         else:
